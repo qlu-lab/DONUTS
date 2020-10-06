@@ -56,6 +56,13 @@ Depending on the phenotype and/or the research purpose, 2 or 3 GWAS could be use
 
 Assortative mating: argument `alpha` = Corr(Gm, Gp) is the correlation between spousal genotypes at each locus. Default is 0 (i.e., random mating). You can also specify `alpha` for each SNP using a data.frame with two columns: "SNP" for variant ID and "alpha" for the correlation.
 
+Some other features:
+* Will first check whether there are duplicated SNPs (by their IDs) and SNPs with duplicated IDs will be removed.
+* Will keep only the SNPs thare are present in all the input GWAS (and `alpha` if it's a data.frame).
+* Will compare `A1` and `A2` in the input GWAS and flip `BETA` when necessary so that it refers to the effect of a same allele.
+* Will generate a very detailed log file.
+
+
 ## Getting started
 
 ### Install `DONUTS` R package
