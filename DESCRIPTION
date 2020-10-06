@@ -1,0 +1,17 @@
+Package: DONUTS
+Title: Decomposer of nature and nurture using GWAS summary statistics
+Version: 1.0.0
+Authors@R: 
+    person(given = "Yuchang",
+           family = "Wu",
+           role = c("aut", "cre"),
+           email = "ywu423@wisc.edu")
+Description: Using multi-generational GWAS summary statistics as input, DONUTS outputs summary statistics for the direct and indirect genetic effects.
+Imports:
+	data.table (>= 1.13.0),
+	dplyr (>= 0.8.3)
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
