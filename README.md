@@ -100,7 +100,7 @@ ss.out <- donuts(ss.own = df.own, ss2 = df.mat, mode = 3,
 # direct_effect.sumstats.gz: direct effect summary statistics
 # indirect_effect.sumstat.gz: indirect effect summary statistics
 # indirect_ss2_effect.sumstats.gz: since the mode is 3 and ss2 is GWAS-M, we can also have the indirect maternal effect
-# all_aligned.sumstats.gz: both in the input and output summary statistics; SNP information are aligned to ss.own 
+# all_aligned.sumstats.gz: contains both the input sumstats and output results; SNP information are aligned to ss.own 
 
 ```
 
