@@ -34,7 +34,7 @@ The arguments in the `donuts()` function are (more details can be found in the f
 * `n3`: integer; sample size for `ss3`; defualt is `NULL`. No need to specify if summary statistics file contains the sample size column "N".
 * `alpha`: numeric or data.frame; default is 0. correlation between spousal genotype (i.e., Corr(Gm, Gp)) at each locus.
 * `mode`: integer 1, 2, or 3; defualt is 2.
-* `OutDir`: output directory to write the direct and indirect effect summary statistics (.gz files); default is the current directory.
+* `OutDir`: output directory to write the direct and indirect effect summary statistics (.gz files); default is the current directory. If is `NULL`, analysis will run but won't write the results.
 
 To use the function `donuts()` in the R package, the input GWAS summary statistics should be read into R as data.frame, and must include the following column names:
 
