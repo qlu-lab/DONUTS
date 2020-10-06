@@ -9,7 +9,7 @@ The R package was developed and tested in Linux and Mac OS environments. It shou
 * [dplyr](https://cran.r-project.org/web/packages/dplyr/index.html) (>= 0.8.3)
 
 ## Tutorial
-The main inputs are GWAS summary statistics and genetic covariance intercept in [LD score regression](https://github.com/bulik/ldsc) to accounts for potential sample overlap among input GWAS. Briefly, there are 2 steps:
+The main inputs are GWAS summary statistics. Genetic covariance intercept in [LD score regression](https://github.com/bulik/ldsc) could be used to accounts for potential sample overlap among input GWAS. Briefly, there are 2 steps:
 
 1. run [LD score regression](https://github.com/bulik/ldsc) using any pair of the input GWAS summary statistics to get the genetic covariance intercept.
 2. read the GWAS summary statistics into R as data.frame, and run `donuts()` function in our `DONUTS` package. 
