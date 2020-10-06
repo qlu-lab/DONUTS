@@ -2,7 +2,7 @@
 % Please edit documentation in R/f.donuts.R
 \name{donuts}
 \alias{donuts}
-\title{DONUTS: Decomposer of nature and nurture using GWAS summary statistics}
+\title{DONUTS: Decomposing nature and nurture using GWAS summary statistics}
 \usage{
 donuts(
   ss.own,
