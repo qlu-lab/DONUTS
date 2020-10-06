@@ -94,7 +94,13 @@ str(df.mat)  # check that the summary statistics have correct column names
 l12 <- 0.1379  # genetic covariance intercept reported by LDSC
 
 ss.out <- donuts(ss.own = df.own, ss2 = df.mat, mode = 3, 
-                 l12 = l12, OutDir = "results")  # output to "results" folder
+                 l12 = l12, OutDir = "results")  
+
+# output to "results" folder; in the "results" folder, you'll find the following files:
+# direct_effect.sumstats.gz: direct effect summary statistics
+# indirect_effect.sumstat.gz: indirect effect summary statistics
+# indirect_ss2_effect.sumstats.gz: since the mode is 3 and ss2 is GWAS-M, we can also have the indirect maternal effect
+# all_aligned.sumstats.gz: both in the input and output summary statistics; SNP information are aligned to ss.own 
 
 ```
 
