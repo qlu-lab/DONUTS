@@ -1,5 +1,5 @@
 Package: DONUTS
-Title: Decomposer of nature and nurture using GWAS summary statistics
+Title: Decomposing nature and nurture using GWAS summary statistics
 Version: 1.0.0
 Authors@R: 
     person(given = "Yuchang",

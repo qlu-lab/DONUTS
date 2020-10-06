@@ -1,7 +1,7 @@
 # DONUTS
 
 ## Introduction
-DONUTS (**D**ecomp**o**sing of **n**ature and n**u**r**t**ure using GWAS **s**ummary statistics) is a novel statistic framework that can estimate direct and indirect genetic effects at the SNP level. It requires GWAS summary statistics as input, allows differential paternal and maternal effects, and accounts for GWAS sample overlap and assortative mating. DONUTS has low computational burden and can complete genome-wide analyses within seconds. We developed an R package `donuts` for the framework.
+DONUTS (**D**ecomp**o**sing **n**ature and n**u**r**t**ure using GWAS **s**ummary statistics) is a novel statistic framework that can estimate direct and indirect genetic effects at the SNP level. It requires GWAS summary statistics as input, allows differential paternal and maternal effects, and accounts for GWAS sample overlap and assortative mating. DONUTS has low computational burden and can complete genome-wide analyses within seconds. We developed an R package `donuts` for the framework.
 
 ## Prerequisites
 The R package is developed and tested in Linux and Mac OS environments. It should also work on Windows. The statistical computing software [R](https://www.r-project.org/) (>=3.5.1) and the following R packages are required (older version may also work but we did not do the test):
