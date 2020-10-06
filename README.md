@@ -1,10 +1,10 @@
 # DONUTS
 
 ## Introduction
-DONUTS (**D**ecomp**o**sing **n**ature and n**u**r**t**ure using GWAS **s**ummary statistics) is a novel statistic framework that can estimate direct and indirect genetic effects at the SNP level. It requires GWAS summary statistics as input, allows differential paternal and maternal effects, and accounts for GWAS sample overlap and assortative mating. DONUTS has low computational burden and can complete genome-wide analyses within seconds. We developed an R package `DONUTS` for the framework.
+DONUTS (**D**ecomp**o**sing **n**ature and n**u**r**t**ure using GWAS **s**ummary statistics) is a novel statistic framework that can estimate direct and indirect genetic effects at the SNP level. It requires GWAS summary statistics as input, allows differential paternal and maternal effects, and accounts for GWAS sample overlap and assortative mating. DONUTS has low computational burden and can complete genome-wide analyses within seconds. We developed an R package `DONUTS` with a main function `donuts()` for the framework.
 
 ## Prerequisites
-The R package was developed and tested in Linux and Mac OS environments. It should also work on Windows. The statistical computing software [R](https://www.r-project.org/) (>= 3.5.1) and the following R packages are required (older version may also work but we did not test):
+The R package was developed and tested on Linux and Mac OS environments. It should also work on Windows. The statistical computing software [R](https://www.r-project.org/) (>= 3.5.1) and the following R packages are required (older version may also work but we did not test):
 * [data.table](https://cran.r-project.org/web/packages/data.table/index.html) (>= 1.13.0)
 * [dplyr](https://cran.r-project.org/web/packages/dplyr/index.html) (>= 0.8.3)
 
@@ -24,7 +24,7 @@ The following GWAS may be used as input:
 
 Note, since the direct and indirect effect sizes are linear combinations of the effect sizes from the input marginal GWAS, it is critical that the phenotype in the input GWAS are on the same scale (i.e., either all standardized or all on the raw scale).
 
-The arguments in the `donuts()` function are (more details can be found in the function's help):
+`donuts()` can take the following arguments (more details can be found in the function's help):
 * `ss.own`: data.frame; GWAS-O summary statistics.
 * `ss2`: data.frame; the 2nd input GWAS summary statistics. Depending on the `mode`, this could be GWAS-M, GWAS-P, or GWAS-MP.
 * `ss3`: data.frame; the 3rd input GWAS summary statistics. Default is `NULL`. This is GWAS-P when `mode` = 3.
@@ -38,7 +38,7 @@ The arguments in the `donuts()` function are (more details can be found in the f
 * `mode`: integer 1, 2, or 3; default is 2.
 * `OutDir`: output directory to write the direct and indirect effect summary statistics (.gz files); default is the current directory. If is `NULL`, analysis will run but won't write the results.
 
-To use the function `donuts()` in the R package, the input GWAS summary statistics should be read into R as data.frame, and must include the following column names:
+To use the function `donuts()` in the R package, the input GWAS summary statistics should be read into R as data.frame, and each must include the following column names:
 
 * CHR: chromosome
 * BP: base-pair coordinate
@@ -61,7 +61,7 @@ Assortative mating: argument `alpha` = Corr(Gm, Gp) is the correlation between s
 Some other features:
 * Will first check whether there are duplicated SNPs (by their IDs) and SNPs with duplicated IDs will be removed.
 * Will keep only the SNPs that are present in all the input GWAS (and `alpha` if it's a data.frame).
-* Will compare `A1` and `A2` in the input GWAS and flip `BETA` when necessary so that it refers to the effect of a same allele.
+* Will compare `A1` and `A2` among the input GWAS and multiply `BETA` by -1 when necessary so that it refers to the effect of a same allele.
 * Will report a very detailed log.
 
 
@@ -84,9 +84,9 @@ Alternatively, you can also directly install the pre-packed package from [Releas
 
 ### Example codes
 
-Below are several example `R` codes. You may need to modify the codes to meet your needs. The first step should be running [LD score regression](https://github.com/bulik/ldsc) to get the genetic covariance intercept. I skipped this step in the examples. You may need to check their  [website](https://github.com/bulik/ldsc) for LDSC tutorials.
+Below are several example `R` codes. You may need to modify the codes to meet your needs. The first step is to run [LD score regression](https://github.com/bulik/ldsc) to get the genetic covariance intercept. I skipped this step in the examples. You may need to check their  [website](https://github.com/bulik/ldsc) for LDSC tutorials.
 
-Example 1. Assuming we have GWAS-O and GWAS-M summary statistics, and we are willing to assume that the indirect paternal effect is 0 (therefore, `mode` is 3), then we can use the following R codes to run the analysis to get the direct, indirect, and indirect maternal effects:
+Example 1. Assuming we have GWAS-O and GWAS-M summary statistics, already got their genetic covariance intercept, and we are willing to assume that the indirect paternal effect is 0 (therefore, `mode = 3`), then we can use the following R codes to run the analysis to get the direct, indirect, and indirect maternal effects:
 
 ```
 library(tidyverse)
@@ -113,7 +113,7 @@ ss.out <- donuts(ss.own = df.own, ss2 = df.mat, mode = 3,
 
 ```
 
-Example 2. Using user defined `alpha`. The default is random mating for each SNP (i.e., `alpha` = 0). However, the user could also prepare a text file containing two columns "SNP" (variant ID) and "alpha" (Corr(Gm, Gp) for each SNP), read it into R as a data.frame and pass it to `donuts()`.
+Example 2. Using user defined `alpha`. The default is random mating for each SNP (i.e., `alpha = 0`). However, user could also prepare a text file containing two columns "SNP" (variant ID) and "alpha" (Corr(Gm, Gp) for each SNP), read it into R as a data.frame and pass it to `donuts()`.
 
 ```
 library(tidyverse)
