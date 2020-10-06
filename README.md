@@ -12,7 +12,7 @@ The R package is developed and tested in Linux and Mac OS environments. It shoul
 The main inputs are GWAS summary statistics and genetic covariance intercept in [LD score regression](https://github.com/bulik/ldsc) to accounts for potential sample overlap among input GWAS. Basically, there are 2 steps:
 
 1. run [LD score regression](https://github.com/bulik/ldsc) using any pair of the input GWAS summary statistics to get the genetic covariance intercept.
-2. read the summary statistics into R as data.frame, and run `donuts()` function in our `donuts` package. 
+2. read the summary statistics into R as data.frame, and run `donuts()` function in our `DONUTS` package. 
     * depending on the trait and/or research purpose, 2 or 3 GWAS can be used as input and you can specify it using the `mode` argument---see details beblow and also in the function's help page.
     * if needed, assortative mating at each locus can be specified using the `alpha` argument
 
@@ -80,7 +80,7 @@ Example 1. Assuming we have GWAS-O and GWAS-M summary statistics, and we are wil
 ```
 library(tidyverse)
 library(data.table)
-library(donuts)
+library(DONUTS)
 options(stringsAsFactors = F)
 
 df.own <- as.data.frame(fread("example/ss1.sumstats.gz"))  # GWAS-O sumstats
@@ -100,7 +100,7 @@ Example2. with user defined `alpha`. The default is random mating for each SNP (
 ```
 library(tidyverse)
 library(data.table)
-library(donuts)
+library(DONUTS)
 options(stringsAsFactors = F)
 
 df.own <- as.data.frame(fread("example/ss1.sumstats.gz"))  # GWAS-O sumstats
