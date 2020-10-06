@@ -65,6 +65,9 @@ Open `R` and run the following codes to install `DONUTS` package:
 ```
 library(devtools)
 install_github("qlu-lab/DONUTS")
+
+library(DONUTS)  # after successful installation, load the package
+?donuts  # check the manual for the donuts() function
 ```
 
 Alternatively, you can also directly install the pre-packed package from [Releases](https://github.com/qlu-lab/DONUTS/releases).
