@@ -58,6 +58,18 @@ Assortative mating: argument `alpha` = Corr(Gm, Gp) is the correlation between s
 
 ## Getting started
 
+### Install `R` package
+
+Open `R` and run the following codes to install `DONUTS` package:
+
+```
+library(devtools)
+install_github("qlu-lab/DONUTS")
+```
+
+Alternatively, you can also directly install the pre-packed package from [Releases](https://github.com/qlu-lab/DONUTS/releases).
+
+
 ### Example codes
 
 Example 1. Assuming we have GWAS-O and GWAS-M summary statistics, and we are willing to assume that the indirect paternal effect is 0 (therefore, `mode` is 3), then we can use the following R codes to run the analysis to get the direct, indirect, and indirect maternal effects:
