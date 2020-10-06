@@ -58,7 +58,7 @@ Assortative mating: argument `alpha` = Corr(Gm, Gp) is the correlation between s
 
 ## Getting started
 
-### Install `R` package
+### Install `DONUTS` R package
 
 Open `R` and run the following codes to install `DONUTS` package:
 
