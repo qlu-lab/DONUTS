@@ -22,6 +22,8 @@ The following GWAS may be used as input:
 * GWAS-P: offspring phenotype ~ father's genotype
 * GWAS-MP: offspring phenotype ~ parental genotype. In this GWAS, mothers and fathers from different families are pooled together. This GWAS can be used as an input only when the indirect maternal effect equals to the indirect paternal effects at each locus, or, when there are equal numbers of mothers and fathers in the GWAS.
 
+Note, since the direct and indirect effect sizes are linear combinations of the effect sizes from marginal GWAS, it is critical that the phenotypes in the input GWAS are on the same scale.
+
 The arguments in the `donuts()` function are (more details can be found in the function's help):
 * `ss.own`: data.frame; GWAS-O summary statistics.
 * `ss2`: data.frame; the 2nd input GWAS summary statistics. Depending on the `mode`, this could be GWAS-M, GWAS-P, or GWAS-MP.
