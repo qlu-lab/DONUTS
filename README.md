@@ -22,7 +22,7 @@ The following GWAS may be used as input:
 * GWAS-P: offspring phenotype ~ father's genotype
 * GWAS-MP: offspring phenotype ~ parental genotype. In this GWAS, mothers and fathers from different families are pooled together. This GWAS can be used as an input only when the indirect maternal effect equals to the indirect paternal effects at each locus, or, when there are equal numbers of mothers and fathers in the GWAS.
 
-Note, since the direct and indirect effect sizes are linear combinations of the effect sizes from the input marginal GWAS, it is critical that the phenotype in the input GWAS are on the same scale (i.e., either all standardized or all on the raw scale).
+Note, since the direct and indirect effect sizes are linear combinations of the effect sizes from the input marginal GWAS, it is critical that the phenotype in the input GWAS are on the same scale (i.e., either all standardized or all on the raw scale, etc).
 
 `donuts()` can take the following arguments (more details can be found in the function's help):
 * `ss.own`: data.frame; GWAS-O summary statistics.
@@ -52,9 +52,9 @@ To use the function `donuts()` in the R package, the input GWAS summary statisti
 Sample sizes are also needed for computing effective sample sizes for the direct and indirect effects. They can be either included in the input GWAS summary statistics by column "N", or can be specified in `donuts()` function. Note, if sample sizes are specified in `donuts()`, these values will be used.
 
 Depending on the phenotype and/or the research purpose, 2 or 3 GWAS could be used as input. This could be specified by `mode` argument in the `donuts()` function:
-* `mode` = 1: 3 inputs are expected: `ss.own` is GWAS-O, `ss2` is GWAS-M, and `ss3` is GWAS-P. This is the most general scenario. In this case, will obtain direct, indirect, indirect maternal, and indirect paternal effects.
-* `mode` = 2: 2 inputs are expected: `ss.own` is GWAS-O and `ss2` is GWAS-MP. This is valid only when indirect maternal effect equals to the indirect paternal effect at each locus or when there are equal number of mothers and fathers in GWAS-MP. In this case, we can obtain direct and indirect genetic effects.
-* `mode` = 3: 2 inputs are expected: `ss.own` is GWAS-O, and `ss2` is GWAS-M or GWAS-P. If `ss2` is GWAS-M (GWAS-P), you're assuming indirect paternal (maternal) effect is 0. In this case, we'll have direct, indirect, and indirect maternal (paternal) genetic effects.
+* `mode = 1`: 3 inputs are expected: `ss.own` is GWAS-O, `ss2` is GWAS-M, and `ss3` is GWAS-P. This is the most general scenario. In this case, will obtain direct, indirect, indirect maternal, and indirect paternal effects.
+* `mode = 2`: 2 inputs are expected: `ss.own` is GWAS-O and `ss2` is GWAS-MP. This is valid only when indirect maternal effect equals to the indirect paternal effect at each locus or when there are equal number of mothers and fathers in GWAS-MP. In this case, we can obtain direct and indirect genetic effects.
+* `mode = 3`: 2 inputs are expected: `ss.own` is GWAS-O, and `ss2` is GWAS-M or GWAS-P. If `ss2` is GWAS-M (GWAS-P), you're assuming indirect paternal (maternal) effect is 0. In this case, we'll have direct, indirect, and indirect maternal (paternal) genetic effects.
 
 Assortative mating: argument `alpha` = Corr(Gm, Gp) is the correlation between spousal genotypes at each locus. Default is 0 (i.e., random mating). You can also specify `alpha` for each SNP using a data.frame with two columns: "SNP" for variant ID and "alpha" for the correlation.
 
@@ -140,6 +140,8 @@ ss.out2 <- donuts(ss.own = df.own, ss2 = df.mat, mode = 3,
 Note, in the example data, to save space and for the purpose of illustration, only a few SNPs are kept in the GWAS summary statistics and thus LDSC won't run with so few SNPs if you use our example data.
 
 ## Citation
+
+Wu Y., Zhong X., Lin Y., Zhao Z., Chen J., Zheng B., Li J., Fletcher J., Lu Q. (2020). [Estimating genetic nurture with summary statistics of multi-generational genome-wide association studies.](https://www.biorxiv.org/content/10.1101/2020.10.06.328724v1) bioRxiv doi:10.1101/2020.10.06.328724
 
 ## License
 All rights reserved for [Lu-Laboratory](https://qlu-lab.org/).
