@@ -121,7 +121,7 @@ donuts <- function(ss.own, ss2, ss3 = NULL,
                    alpha = 0, mode = 2,
                    OutDir = getwd()){
 
-  # Date:   Oct. 10, 2020 (previously, this function was named as "dissect")
+  # Date:   Oct. 10, 2020
   # Author: Yuchang Wu
   # E-mail: ywu423@wisc.edu
   #
@@ -166,10 +166,10 @@ donuts <- function(ss.own, ss2, ss3 = NULL,
 
 
 
-  cat("\n#########################################################################\n")
-  cat("# DONUTS: Decomposer of nature and nurture using GWAS summary statistics #\n")
-  cat("#                       Wu et al.(2020), UW-Madison                      #\n")
-  cat("##########################################################################\n")
+  cat("\n#######################################################################\n")
+  cat("# DONUTS: Decomposing nature and nurture using GWAS summary statistics #\n")
+  cat("#                     Wu et al.(2021), UW-Madison                      #\n")
+  cat("#########################################################################\n")
   cat("\n\tWill take summary statistics from GWASs as inputs. They need to be R's data.frame objects.
         At least 2 sumstats inputs. Can specify LDSC intercept using l12, l13, and l23; defaults are all 0s.
         Can specify sample sizes for each sumstats using n1, n2, and n3, if they are not specified in the input sumstats. Defaults are NULL.
