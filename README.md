@@ -141,7 +141,10 @@ Note, in the example data, to save space and for the purpose of illustration, on
 
 ## Citation
 
-Wu Y., Zhong X., Lin Y., Zhao Z., Chen J., Zheng B., Li J., Fletcher J., Lu Q. (2020). [Estimating genetic nurture with summary statistics of multi-generational genome-wide association studies.](https://www.biorxiv.org/content/10.1101/2020.10.06.328724v1) bioRxiv doi:10.1101/2020.10.06.328724
+Wu Y., Zhong X., Lin Y., Zhao Z., Chen J., Zheng B., Li J., Fletcher J., Lu Q. (2021). [Estimating genetic nurture with summary statistics of multi-generational genome-wide association studies](https://www.pnas.org/doi/10.1073/pnas.2023184118). _Proceedings of the National Academy of Sciences_, 118(25): e2023184118. 
+
+**_Accompanying [commentary article](https://www.pnas.org/doi/10.1073/pnas.2109433118)_**
+
 
 ## License
 All rights reserved for [Lu-Laboratory](https://qlu-lab.org/).
